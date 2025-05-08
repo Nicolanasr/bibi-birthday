@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your birthday is in ...</title>
+    <style>
+body {
+    background-image: url("360_F_687630384_mT5a6RiDqbEXcwpRjL5G5N7qDxaV33qY.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    margin-top: 5rem; 
+    text-align: center;
+}        
+h2 {
+    text-align: center;
+    margin-top: 0;
+}
+h1 span, h2 span {
+    font-size: 6px;
+}
+
+ #countdown {
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: auto;
+      margin-bottom: 7rem;
+    }
+  #message {
+      margin-top: 10px;
+      color: red;
+    }
+    </style>
+</head>
+<body>
+    <div style="position: absolute; top: 85%; left: 76%; z-index: 2; font-size: 2px;">lat</div>
+
+<h1>Check in daily for fresh riddles <span >(Maybe)</span></h1>
+<h2> Solve them all, and you <span>might</span> just unlock your birthday surprise.</h2>
+
+    
+<h2 style="text-align: center;">Today's riddle 🥁🥁🥁🥁🥁🥁🥁</h2>
+    <code> I’m a number with two digits before the dot, <br>
+Greater than twenty, but thirty I’m not. <br>
+My decimal’s shy, just under one,<br>
+Put me together — the riddle’s done.<br>
+What number am I?</code>
+
+ <input style="margin-top: 1rem;" type="number" id="numberInput" step="0.1" placeholder="Enter a decimal number" />
+ <br>
+  <button onclick="validateNumber()" style="margin-top: .5rem;">Submit</button>
+  
+  <p id="message"></p>
+
+<div id="countdown"></div>
+</body>
+<script>
+ function getRandomMessage() {
+      const messages = [
+        "Oops! That's not quite right, try again.",
+        "Hmm, not quite! Give it another go.",
+        "Close, but not quite there yet! Try again.",
+        "Not quite the one, try a little different number."
+      ];
+      // Randomly select a message from the array
+      return messages[Math.floor(Math.random() * messages.length)];
+    }
+
+    function validateNumber() {
+      const userInput = parseFloat(document.getElementById('numberInput').value);
+      const messageElement = document.getElementById('message');
+
+      if (userInput === 27.9) {
+        alert("Great job! Remember this number and look around for 1 more clue.");
+        messageElement.textContent = '';  // Clear any previous messages
+      } else {
+        messageElement.textContent = getRandomMessage();
+      }
+    }
+  function updateCountdown() {
+    // Target date: May 28, current year at 00:00:00
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const targetDate = new Date(`May 28, ${currentYear} 00:00:00`);
+
+    // If May 28 has passed, count down to next year's May 28
+    if (now > targetDate) {
+      targetDate.setFullYear(currentYear + 1);
+    }
+
+    const diff = targetDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("countdown").innerHTML =
+      `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+  }
+
+  // Update every second
+  setInterval(updateCountdown, 1000);
+
+  // Run once immediately
+  updateCountdown();
+</script>
+</script>
+</html>
