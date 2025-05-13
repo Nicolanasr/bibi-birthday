@@ -90,6 +90,12 @@ h1 span, h2 span {
       const directionInput = document.getElementById('directionGuess').value.trim().toUpperCase();
       const messageElement = document.getElementById('message');
 
+      if (numberInput === 34.36 && directionInput === "N") {   
+        document.querySelector("body").innerHTML=`<h1>“Your journey has begun, but not all maps reveal their secrets at once.<br />
+Keep these numbers close — they will matter when the stars align.”</h1><br/>
+<p style="text-align:center;">N and 34.36</p>`;
+      } 
+
       if (numberInput === 34.36) {
         alert("🎉 Bravo !!!!! Now what to do with this ");
         messageElement.textContent = "";
@@ -97,13 +103,20 @@ h1 span, h2 span {
         const messages = [
         ];
         const randomMessage = getRandomMessage();
-        messageElement.textContent = randomMessage;
+        alert(randomMessage)
       }
     }
  function checkGuess_2() {
       const numberInput = parseFloat(document.getElementById('numberGuess').value);
       const directionInput = document.getElementById('directionGuess').value.trim().toUpperCase();
       const messageElement = document.getElementById('message');
+
+      if (numberInput === 34.36 && directionInput === "N") {   
+        document.querySelector("body").innerHTML=`<h1>“Your journey has begun, but not all maps reveal their secrets at once.<br />
+Keep these numbers close — they will matter when the stars align.”</h1><br/>
+<p style="text-align:center;">N and 34.36</p>`;
+      } 
+
 
       if (directionInput === "N") {
         alert("🎉 Bravo !!!!! Now what to do with this ");
@@ -112,7 +125,7 @@ h1 span, h2 span {
         const messages = [
         ];
         const randomMessage = getRandomMessage();
-        messageElement.textContent = randomMessage;
+        alert(randomMessage)
       }
     }
  function getRandomMessage() {
