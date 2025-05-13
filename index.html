@@ -34,9 +34,24 @@ h1 span, h2 span {
       margin-top: auto;
       margin-bottom: 7rem;
     }
-  #message {
-      margin-top: 10px;
-      color: red;
+ input {
+      padding: 8px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #e74c3c;
     }
     </style>
 </head>
@@ -48,19 +63,68 @@ h1 span, h2 span {
 
     
 <h2 style="text-align: center;">Today's riddle 🥁🥁🥁🥁🥁🥁🥁</h2>
-    <p>No hint for Today</p>
-    <p>BTW You can cancel 26 May as your day off we don't need it</p>
+    <p>Between a trio and a quartet I stand,<br/>
+        Beyond the dot, a mirrored hand.<br/>
+        One half of twelve, its twin appears,<br/>
+        Guess me right, and silence your fears.<br/>
+    </p>
+  <input type="number" id="numberGuess" step="0.01" placeholder="Enter a number (e.g. 43.63)">
+  <a href="https://wa.me/96171365663?text=Need%20Hint!">Need a hint?</a>
+  <button onclick="checkGuess()">Guess</button>
+  <br>
+  <p>I rise where the sun will never set, <br/>
+    Atop the world, no need to fret. <br/>
+    I'm always first in never, none, and night, <br/>
+    Find me, you'll guess it right.. <br /></p>
+  <input type="text" id="directionGuess" placeholder="Enter a direction (e.g. S)">
+  <button onclick="checkGuess_2()">Guess</button>
+
+  <p id="message"></p>
 
   
 <div id="countdown"></div>
 </body>
 <script>
+ function checkGuess() {
+      const numberInput = parseFloat(document.getElementById('numberGuess').value);
+      const directionInput = document.getElementById('directionGuess').value.trim().toUpperCase();
+      const messageElement = document.getElementById('message');
+
+      if (numberInput === 34.36) {
+        alert("🎉 Bravo !!!!! Now what to do with this ");
+        messageElement.textContent = "";
+      } else {
+        const messages = [
+        ];
+        const randomMessage = getRandomMessage();
+        messageElement.textContent = randomMessage;
+      }
+    }
+ function checkGuess_2() {
+      const numberInput = parseFloat(document.getElementById('numberGuess').value);
+      const directionInput = document.getElementById('directionGuess').value.trim().toUpperCase();
+      const messageElement = document.getElementById('message');
+
+      if (directionInput === "N") {
+        alert("🎉 Bravo !!!!! Now what to do with this ");
+        messageElement.textContent = "";
+      } else {
+        const messages = [
+        ];
+        const randomMessage = getRandomMessage();
+        messageElement.textContent = randomMessage;
+      }
+    }
  function getRandomMessage() {
       const messages = [
         "Oops! That's not quite right, try again.",
         "Hmm, not quite! Give it another go.",
         "Close, but not quite there yet! Try again.",
-        "Not quite the one, try a little different number."
+        "Not quite the one, try a little different number.",
+        
+          "Hmm… try again!",
+          "You're getting closer… maybe!",
+          "Keep guessing, don't give up!"
       ];
       // Randomly select a message from the array
       return messages[Math.floor(Math.random() * messages.length)];
