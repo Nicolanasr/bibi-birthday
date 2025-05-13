@@ -63,71 +63,23 @@ h1 span, h2 span {
 
     
 <h2 style="text-align: center;">Today's riddle 🥁🥁🥁🥁🥁🥁🥁</h2>
-    <p>Between a trio and a quartet I stand,<br/>
-        Beyond the dot, a mirrored hand.<br/>
-        One half of twelve, its twin appears,<br/>
-        Guess me right, and silence your fears.<br/>
-    </p>
-  <input type="number" id="numberGuess" step="0.01" placeholder="Enter a number (e.g. 43.63)">
-  <a href="https://wa.me/96171365663?text=Need%20Hint!">Need a hint?</a>
-  <button onclick="checkGuess()">Guess</button>
-  <br>
-  <p>I rise where the sun will never set, <br/>
-    Atop the world, no need to fret. <br/>
-    I'm always first in never, none, and night, <br/>
-    Find me, you'll guess it right.. <br /></p>
-  <input type="text" id="directionGuess" placeholder="Enter a direction (e.g. S)">
-  <button onclick="checkGuess_2()">Guess</button>
-
-  <p id="message"></p>
+<p>
+Fi shi 7elo jeye, ma bado na7na nle2i,<br/>
+huwwe ra7 yeje w yde22.<br/>
+Ma tes2ale wen w aymata<br/>
+A7san ma tet8ayyar l 5otta.<br/>
+</p>
+<p>
+    l "N" l tenye kenet 8alta w 7a22ik 3alayna ya setna <br /> 
+    2lebiya la tsir "E"<br/>
+    w hala2 sar fina nkammel l jeux
+</p>
+<p>N.B: Jarrabet zabbet l efyet :p</p>
 
   
 <div id="countdown"></div>
 </body>
 <script>
- function checkGuess() {
-      const numberInput = parseFloat(document.getElementById('numberGuess').value);
-      const directionInput = document.getElementById('directionGuess').value.trim().toUpperCase();
-      const messageElement = document.getElementById('message');
-
-      if (numberInput === 34.36 && directionInput === "N") {   
-        document.querySelector("body").innerHTML=`<h1>“Your journey has begun, but not all maps reveal their secrets at once.<br />
-Keep these numbers close — they will matter when the stars align.”</h1><br/>
-<p style="text-align:center;">N and 34.36</p>`;
-      } 
-
-      if (numberInput === 34.36) {
-        alert("🎉 Bravo !!!!! Now what to do with this ");
-        messageElement.textContent = "";
-      } else {
-        const messages = [
-        ];
-        const randomMessage = "What you seek could be reversed — sometimes, the path to the answer is backwards.";
-        alert(randomMessage)
-      }
-    }
- function checkGuess_2() {
-      const numberInput = parseFloat(document.getElementById('numberGuess').value);
-      const directionInput = document.getElementById('directionGuess').value.trim().toUpperCase();
-      const messageElement = document.getElementById('message');
-
-      if (numberInput === 34.36 && directionInput === "N") {   
-        document.querySelector("body").innerHTML=`<h1>“Your journey has begun, but not all maps reveal their secrets at once.<br />
-Keep these numbers close — they will matter when the stars align.”</h1><br/>
-<p style="text-align:center;">N and 34.36</p>`;
-      } 
-
-
-      if (directionInput === "N") {
-        alert("🎉 Bravo !!!!! Now what to do with this ");
-        messageElement.textContent = "";
-      } else {
-        const messages = [
-        ];
-        const randomMessage = getRandomMessage();
-        alert(randomMessage)
-      }
-    }
  function getRandomMessage() {
       const messages = [
         "Oops! That's not quite right, try again.",
