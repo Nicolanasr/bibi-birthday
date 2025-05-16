@@ -53,6 +53,9 @@ h1 span, h2 span {
       font-size: 18px;
       color: #e74c3c;
     }
+    p {
+        text-align: center;;
+    }
     </style>
 </head>
 <body>
@@ -63,23 +66,25 @@ h1 span, h2 span {
 
     
 <h2 style="text-align: center;">Today's riddle 🥁🥁🥁🥁🥁🥁🥁</h2>
-<p>
-Fi shi la 7alo jeye, ma bado na7na nle2i,<br/>
-huwwe ra7 yeje ya 8ali.<br/>
-Ma tes2ale wen w aymata<br/>
-A7san ma 8ayyer l 5otta.<br/>
-</p>
-<p>
-    l "N" l tenye kenet 8alta w 7a22ik 3alayna ya setna <br /> 
-    2lebiya la tsir "E"<br/>
-    w hala2 7a nkammel l jeux
-</p>
-<p>N.B: Jarrabet zabbet l efyet :p</p>
+<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
+<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
+<p>Mechwarna bado se3ten💃<br/> 3al 4 nhar ltanen 💃<br/> ma badik ma3ik chi💃<br/>la2anno mhaddar kell chi💃</p>
+<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
+<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
 
+ <audio autoplay muted id="myAudio" src="./حسين الجسمي - بشرة خير (النسخة الأصلية) 2014 Hussain Al Jassmi - Boshret Kheir (Official Audio).mp3"></audio>
+ <button id="playbtn" onclick="unmuteAndPlay()" style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 2;;">click</button>
   
 <div id="countdown"></div>
 </body>
 <script>
+function unmuteAndPlay() {
+  const audio = document.getElementById("myAudio");
+  audio.muted = false;
+  audio.play();
+document.querySelector("#playbtn").style.display = "none"
+}
+
  function getRandomMessage() {
       const messages = [
         "Oops! That's not quite right, try again.",
