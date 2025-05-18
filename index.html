@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<p lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,26 +64,33 @@ h1 span, h2 span {
 <h1>Check in daily for fresh riddles <span >(Maybe)</span></h1>
 <h2> Solve them all, and you <span>might</span> just unlock your birthday surprise.</h2>
 
-    
-<h2 style="text-align: center;">Today's riddle 🥁🥁🥁🥁🥁🥁🥁</h2>
-<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
-<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
-<p>Mechwarna bado se3ten💃<br/> 3al 4 nhar ltanen 💃<br/> ma badik ma3ik chi💃<br/>la2anno mhaddar kell chi💃</p>
-<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
-<p>💃💃💃💃💃💃💃💃💃💃💃💃💃</p>
+<p>
+    3id bibi arrab ktir ba3ed fi bas 10 days 
+</p>
+<p>Hayde l riddle la we7de mn l osas yalle ra7 na3mela</p>
+<p>
+    Ana Awe w sari3 bas mich ktir kbir <br>
+    bse3 ymkn la cha5sen <br>
+    sawte 3ale chwe <br>
+    badde 7ada ydall mesekne b idayye l tnen<br>
+    chi ken badna na3mlo last year <br>
+    mkawwan bas mn 3 kelmet
+</p>    
+<p>
+<!-- lama t8ib lchames w yotla3 l amar  <br/>
+ mnotla3 la fo2 b 3youn bt nawwer <br/>
+ ma fi daw madine wala dajje bas njoum btdawwe,<br/>
+b mou5ayam ma fi 7ada lsahara ra7 tkoun a7la  -->
+</p>
 
- <audio autoplay muted id="myAudio" src="audio.mp3"></audio>
- <button id="playbtn" onclick="unmuteAndPlay()" style="position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 2;;">click</button>
+<input type="text" id="answerinput" placeholder="***">
+<button onclick="validateNumber()">SUBMIT</button>
+
+<p id="message"></p>
   
 <div id="countdown"></div>
 </body>
 <script>
-function unmuteAndPlay() {
-  const audio = document.getElementById("myAudio");
-  audio.muted = false;
-  audio.play();
-document.querySelector("#playbtn").style.display = "none"
-}
 
  function getRandomMessage() {
       const messages = [
@@ -101,11 +108,11 @@ document.querySelector("#playbtn").style.display = "none"
     }
 
     function validateNumber() {
-      const userInput = parseFloat(document.getElementById('numberInput').value);
+      const userInput = document.getElementById('answerinput').value;
       const messageElement = document.getElementById('message');
 
-      if (userInput === 27.9) {
-        alert("Great job! Remember this number and look around for 1 more clue.");
+      if (userInput.toLowerCase() === "atv") {
+        alert("WAAAAWW KTIRRR AWIYEEE YALLA SOON KELLO RA7 YENFADA7");
         messageElement.textContent = '';  // Clear any previous messages
       } else {
         messageElement.textContent = getRandomMessage();
